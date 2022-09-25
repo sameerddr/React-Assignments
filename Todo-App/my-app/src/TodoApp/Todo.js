@@ -19,7 +19,9 @@ function Todo() {
     setdata([...data, newdata]);
   }
   const deleteItem = (index) => {
-    setdata((data) => data.filter((_, i) => i !== index));
+    const del = [...data];
+    del.splice(index, 1);
+    setdata(del);
   };
 
   const editItem = () => {
@@ -49,15 +51,15 @@ function Todo() {
         <div className="CONTENT">
           {data.map((val, index) => {
             return (
-              <>
+              <div>
                 <input
                   className="type"
                   type="text"
                   defaultValue={val}
                   readOnly={read}
                 />
-                <button onClick={() => deleteItem(index)}>Delete</button> <br />{" "}
-              </>
+                <button onClick={() => deleteItem(index)}>Delete</button>
+              </div>
             );
           })}
         </div>
