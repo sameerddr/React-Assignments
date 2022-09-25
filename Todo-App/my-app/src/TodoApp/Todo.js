@@ -18,10 +18,12 @@ function Todo() {
     const newdata = task;
     setdata([...data, newdata]);
   }
-  const deleteItem = (index) => {
-    const del = [...data];
-    del.splice(index, 1);
-    setdata(del);
+
+  const deleteItem = (id) => {
+    const finalData = data.filter((curEle, index) => {
+      return index !== id;
+    });
+    setdata(finalData);
   };
 
   const editItem = () => {
