@@ -9,13 +9,15 @@ label {
 
 button {
     padding: 10px 20px;
-    margin: 10px;
+    margin-right: 10px;
     cursor: pointer;
+    position: relative;
+    bottom: 4px;
 }
 
 button:hover {
     background-color: wheat;
-    border-radius: 20px;
+    border-radius: 10px;
 }
 
 .input {
@@ -31,4 +33,10 @@ button:hover {
     width: 300px;
     outline: none;
     margin-top: 20px;
+}
+
+input[type] {
+    font-size: 30px;
+    color: red;
+    text-transform: capitalize;
 }
